@@ -1,9 +1,10 @@
 import { ClipboardIcon, PlusIcon } from "lucide-react";
 import { AddTaskFormContainer, TaskListContainer } from "../containers";
+
 const HomePage = () => {
 	return (
-		<main className="flex h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-			<div className="flex flex-col w-7xl mx-auto gap-12">
+		<main className="flex h-screen overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+			<div className="flex flex-col max-w-7xl mx-auto gap-12 w-full min-h-0">
 				<header>
 					<h1 className="text-3xl font-bold text-center text-gray-900 mb-1">
 						Task Manager
@@ -12,7 +13,8 @@ const HomePage = () => {
 						Manage your tasks with ease.
 					</p>
 				</header>
-				<div className="grid grid-cols-1 md:grid-cols-12 gap-14 size-full">
+
+				<div className="grid grid-cols-1 md:grid-cols-12 gap-14 flex-1 min-h-0">
 					<section className="flex flex-col gap-6 h-fit md:col-span-5 bg-white rounded-2xl p-8 shadow-lg backdrop-blur-lg border border-gray-100">
 						<div className="flex items-center">
 							<div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-2 sm:mr-3">
@@ -24,7 +26,8 @@ const HomePage = () => {
 						</div>
 						<AddTaskFormContainer />
 					</section>
-					<section className="flex flex-col md:col-span-7 gap-6">
+
+					<section className="flex flex-col md:col-span-7 gap-6 h-full min-h-0">
 						<div className="flex items-center">
 							<div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-2 sm:mr-3">
 								<ClipboardIcon className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-600" />
@@ -40,4 +43,5 @@ const HomePage = () => {
 		</main>
 	);
 };
+
 export default HomePage;

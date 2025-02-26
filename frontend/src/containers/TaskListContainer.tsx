@@ -37,9 +37,9 @@ const TaskListContainer = () => {
 	};
 
 	return (
-		<div className="flex flex-col items-center justify-center">
+		<div className="flex flex-col h-full overflow-hidden">
 			{!isGetTasksSuccess ? (
-				<div className="flex flex-col items-center justify-center gap-2">
+				<div className="flex-1 flex flex-col items-center justify-center gap-2">
 					{isGetTasksLoading && (
 						<>
 							<Loader size={40} className="animate-spin text-primary" />
@@ -65,7 +65,7 @@ const TaskListContainer = () => {
 					)}
 				</div>
 			) : (
-				<>
+				<div className="flex flex-col h-full overflow-hidden">
 					{!!paginatedTasks?.totalElements && (
 						<div className="flex justify-end self-end p-2 text-sm text-gray-600">
 							<span>Showing</span>
@@ -79,12 +79,13 @@ const TaskListContainer = () => {
 							<span>recent tasks.</span>
 						</div>
 					)}
-
-					<TaskList
-						tasks={paginatedTasks?.content}
-						completeTask={completeTask}
-					/>
-				</>
+					<div className="flex-1 overflow-auto">
+						<TaskList
+							tasks={paginatedTasks?.content}
+							completeTask={completeTask}
+						/>
+					</div>
+				</div>
 			)}
 		</div>
 	);
