@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { NON_EMPTY_REGEX } from "../../constants";
 import { BaseTask, Task } from "../../types";
+import { Loader } from "lucide-react";
 
 interface TaskFormProps {
 	onSubmit: (task: BaseTask) => Promise<Task>;
@@ -23,11 +25,18 @@ const TaskForm = ({ onSubmit }: TaskFormProps) => {
 			<div className="flex flex-col gap-2.5">
 				<label htmlFor="title" className="text-sm font-medium text-gray-700">
 					Title
+					<span title="Required" className="text-red-600 font-bold ml-1">
+						*
+					</span>
 				</label>
 				<input
 					type="text"
 					{...register("title", {
 						required: "Title is required.",
+						pattern: {
+							value: NON_EMPTY_REGEX,
+							message: "Title must not be only empty characters.",
+						},
 						maxLength: {
 							value: 50,
 							message: "Title must be less than 50 characters.",
@@ -47,10 +56,17 @@ const TaskForm = ({ onSubmit }: TaskFormProps) => {
 					className="text-sm font-medium text-gray-700"
 				>
 					Description
+					<span title="Required" className="text-red-600 font-bold ml-1">
+						*
+					</span>
 				</label>
 				<textarea
 					{...register("description", {
 						required: "Description is required.",
+						pattern: {
+							value: NON_EMPTY_REGEX,
+							message: "Description must not be only empty characters.",
+						},
 						maxLength: {
 							value: 255,
 							message: "Description must be less than 255 characters.",
@@ -74,17 +90,13 @@ const TaskForm = ({ onSubmit }: TaskFormProps) => {
 					Object.keys(errors).length > 0
 						? "bg-red-300 cursor-not-allowed"
 						: isSubmitting
-						? "bg-primary cursor-not-allowed"
+						? "bg-primary cursor-progress"
 						: "bg-primary transition duration-200 ease-in-out active:scale-95 cursor-pointer"
 				}`}
 			>
 				{isSubmitting ? (
 					<>
-						<img
-							src="/icons/spinner.svg"
-							alt="Loading..."
-							className="w-5 h-5"
-						/>
+						<Loader className="w-5 h-5 animate-spin" />
 						<span>Adding Task...</span>
 					</>
 				) : (

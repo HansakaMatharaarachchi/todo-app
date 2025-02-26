@@ -12,3 +12,7 @@
 	--font-sans: "plus-jakarta-sans", sans-serif;
 	--color-primary: #0000ff;
 }
+
+:root {
+	--toastify-font-family: inherit;
+}

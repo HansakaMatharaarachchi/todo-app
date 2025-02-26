@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200 -200 2320 1480" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="50%" stop-color="#eef2ff" />
+      <stop offset="100%" stop-color="#faf5ff" />
+    </linearGradient>
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 L0 40" fill="none" stroke="#f1f5f9" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect x="-200" y="-200" width="2320" height="1480" fill="#f8fafc" />
+  <rect x="-200" y="-200" width="2320" height="1480" fill="url(#bgGradient)" opacity="0.8" />
+
+  <circle cx="96" cy="96" r="192" fill="#e9d5ff" opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 30 -50; -20 20; 0 0" dur="7s"
+      repeatCount="indefinite" begin="0s" />
+  </circle>
+
+  <circle cx="1976" cy="144" r="144" fill="#fef3c7" opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 30 -50; -20 20; 0 0" dur="7s"
+      repeatCount="indefinite" begin="2s" />
+  </circle>
+
+  <circle cx="240" cy="1248" r="160" fill="#fecdd3" opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 30 -50; -20 20; 0 0" dur="7s"
+      repeatCount="indefinite" begin="4s" />
+  </circle>
+
+  <circle cx="1912" cy="1152" r="128" fill="#bfdbfe" opacity="0.2">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 30 -50; -20 20; 0 0" dur="7s"
+      repeatCount="indefinite" begin="2s" />
+  </circle>
+
+  <rect x="-200" y="-200" width="2320" height="1480" fill="url(#gridPattern)" opacity="0.2" />
+</svg>

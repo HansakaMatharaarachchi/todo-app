@@ -10,7 +10,7 @@ const AddTaskFormContainer = () => {
 		return await toast.promise(addTask(data).unwrap(), {
 			pending: "Adding task...",
 			success: "Task added!",
-			error: "Failed to add task, please try again.",
+			error: "Failed to add task, please try again...",
 		});
 	};
 

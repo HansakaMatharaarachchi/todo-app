@@ -12,6 +12,6 @@ export interface Task extends BaseTask {
 
 export type CreateTaskPayload = BaseTask;
 
-export interface UpdateTaskPayload extends Partial<BaseTask> {
+export interface PatchTaskPayload extends Partial<BaseTask> {
 	isCompleted?: boolean;
 }
