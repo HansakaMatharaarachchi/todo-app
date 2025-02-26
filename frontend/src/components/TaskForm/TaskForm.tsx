@@ -30,6 +30,7 @@ const TaskForm = ({ onSubmit }: TaskFormProps) => {
 					</span>
 				</label>
 				<input
+					id="title"
 					type="text"
 					{...register("title", {
 						required: "Title is required.",
@@ -61,6 +62,7 @@ const TaskForm = ({ onSubmit }: TaskFormProps) => {
 					</span>
 				</label>
 				<textarea
+					id="description"
 					{...register("description", {
 						required: "Description is required.",
 						pattern: {
