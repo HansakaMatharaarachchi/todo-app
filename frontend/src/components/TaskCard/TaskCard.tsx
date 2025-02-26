@@ -28,6 +28,7 @@ const TaskCard = ({ task, completeTask }: TaskCardProps) => {
 
 		try {
 			await completeTask(task.id);
+		} catch {
 		} finally {
 			setIsCompletingTask(false);
 		}

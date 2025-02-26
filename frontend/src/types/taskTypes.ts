@@ -6,8 +6,8 @@ export interface BaseTask {
 export interface Task extends BaseTask {
 	id: number;
 	isCompleted: boolean;
-	createdAt: Date;
-	updatedAt: Date;
+	createdAt: string;
+	updatedAt?: string;
 }
 
 export type CreateTaskPayload = BaseTask;
