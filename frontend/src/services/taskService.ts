@@ -10,7 +10,7 @@ export const taskApi = createApi({
 	endpoints: (builder) => ({
 		addTask: builder.mutation<Task, BaseTask>({
 			query: (task) => ({
-				url: "tasks",
+				url: "",
 				method: "POST",
 				data: task,
 			}),

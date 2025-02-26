@@ -1,4 +1,4 @@
-import { TaskFormContainer } from "../containers";
+import { AddTaskFormContainer } from "../containers";
 
 const HomePage = () => {
 	return (
@@ -12,7 +12,7 @@ const HomePage = () => {
 						<h2 className="mb-8 text-2xl font-semibold text-gray-900">
 							Add a Task
 						</h2>
-						<TaskFormContainer />
+						<AddTaskFormContainer />
 					</div>
 					<div className="space-y-8">
 						<h2 className="mb-8 text-2xl font-semibold text-gray-900">Tasks</h2>

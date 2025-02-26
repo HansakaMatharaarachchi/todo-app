@@ -1,9 +1,9 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { BaseTask } from "../../types";
-import { toast } from "react-toastify";
+import { BaseTask, Task } from "../../types";
 
 interface TaskFormProps {
-	onSubmit: (task: BaseTask) => Promise<void>;
+	onSubmit: (task: BaseTask) => Promise<Task>;
 }
 
 const TaskForm = ({ onSubmit }: TaskFormProps) => {
@@ -11,22 +11,15 @@ const TaskForm = ({ onSubmit }: TaskFormProps) => {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors, isSubmitting },
+		formState: { errors, isSubmitting, isSubmitSuccessful },
 	} = useForm<BaseTask>();
 
-	const submitForm = async (data: BaseTask) => {
-		try {
-			await onSubmit(data);
-			reset();
-
-			toast.success("Task added successfully!");
-		} catch {
-			toast.error("Failed to add task. Please try again.");
-		}
-	};
+	useEffect(() => {
+		reset();
+	}, [isSubmitSuccessful]);
 
 	return (
-		<form className="flex flex-col gap-6" onSubmit={handleSubmit(submitForm)}>
+		<form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
 			<div className="flex flex-col gap-2.5">
 				<label htmlFor="title" className="text-sm font-medium text-gray-700">
 					Title
