@@ -1,3 +1,5 @@
+import { TaskFormContainer } from "../containers";
+
 const HomePage = () => {
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
@@ -10,7 +12,7 @@ const HomePage = () => {
 						<h2 className="mb-8 text-2xl font-semibold text-gray-900">
 							Add a Task
 						</h2>
-						{/* !TODO */}
+						<TaskFormContainer />
 					</div>
 					<div className="space-y-8">
 						<h2 className="mb-8 text-2xl font-semibold text-gray-900">Tasks</h2>
