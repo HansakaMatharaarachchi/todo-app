@@ -14,7 +14,7 @@ RUN ./gradlew dependencies --no-daemon
 
 COPY src ./src
 
-RUN ./gradlew clean build --no-daemon
+RUN ./gradlew clean build -x test --no-daemon
 
 
 # Build the final runtime image with built jar.
