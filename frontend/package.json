@@ -8,12 +8,14 @@
 		"build": "tsc -b && vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"test": "vitest"
+		"test": "vitest",
+		"cy:open": "cypress open"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.6.0",
 		"@tailwindcss/vite": "^4.0.8",
 		"axios": "^1.7.9",
+		"cypress": "^14.1.0",
 		"lucide-react": "^0.476.0",
 		"moment": "^2.30.1",
 		"react": "^19.0.0",

@@ -11,12 +11,10 @@ const TaskList = ({ tasks, completeTask }: TaskListProps) => {
 	return (
 		<div className="h-full w-full">
 			{tasks?.length ? (
-				<div className="h-full w-full p-2">
-					<div className="flex flex-col gap-4">
-						{tasks.map((task) => (
-							<TaskCard key={task.id} task={task} completeTask={completeTask} />
-						))}
-					</div>
+				<div data-testid="task-list" className="flex flex-col gap-4">
+					{tasks.map((task) => (
+						<TaskCard key={task.id} task={task} completeTask={completeTask} />
+					))}
 				</div>
 			) : (
 				<div className="h-full flex items-center justify-center">
